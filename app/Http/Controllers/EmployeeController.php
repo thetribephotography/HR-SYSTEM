@@ -31,4 +31,11 @@ class EmployeeController extends Controller
 
         return redirect ('/home')->with('Employee Successfull');
     }
+
+    public function show(){
+
+        $list = Employee::all();
+
+        return view('user.employee_list', compact('list'));
+    }
 }
