@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
 use App\Models\Employee;
 use App\Models\User;
+use App\Http\Controllers\EmployeeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,5 @@ Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::get('user/employee_reg', [HomeController::class, 'employee'])->name('users.employee_reg');
+Route::any('employee/register', [EmployeeController::class, 'register'])->name('employees.register');
+
