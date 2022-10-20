@@ -5,24 +5,27 @@
 <div class="container-fluid mt--7">
     <div class="card">
         <div class="card-body">
-<form class="">
+<form class="" method="POST" action="{{route ('employees.register') }}">
+    @csrf
     <div class="row">
         <div class="mb-3 col">
-          <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+            <label for="firstname" class="form-label">First Name</label>
+          <input type="text" name="firstname" id="firstname" class="form-control" placeholder="First name" aria-label="First name">
         </div>
         <div class="col">
-          <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+            <label for="lastname" class="form-label">Last Name</label>
+          <input type="text" name="lastname" id="lastname" class="form-control" placeholder="Last name" aria-label="Last name">/
         </div>
       </div>
 
       <div class="mb-3 row">
       <div class="mb-3 col">
         <label for="exampleFormControlInput1" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
       </div>
       <div class="mb-3 col">
         <label for="contact" class="form-label">Contact No.</label>
-        <input type="number" class="form-control" id="contact" placeholder="">
+        <input type="number" class="form-control" id="contact" name="contact" placeholder="">
       </div>
     </div>
       
@@ -66,7 +69,7 @@
       </div>
     </div> --}}
     <div class="col-12">
-      <button type="submit" class="btn btn-primary">Register</button>
+      <button type="submit" class="btn btn-primary" id="">Register</button>
     </div>
   </form>
 </div>

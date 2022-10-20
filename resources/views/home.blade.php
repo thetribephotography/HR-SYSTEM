@@ -9,7 +9,9 @@
 
                 <p>Welcome</p>
 
-                <a href="{{route ('users.employee_reg')}}"> Linkkkkk</a>
+                <a href="{{route ('users.employee_reg')}}"> Register Employee</a>
+
+                <a href="{{route ('employees.show')}}"> Show Employees List</a>
 
                 {{-- <div class="card-body">
                     @if (session('status'))

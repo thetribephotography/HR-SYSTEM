@@ -30,4 +30,9 @@ class HomeController extends Controller
     {
         return view ('user.employee_reg');
     }
+
+    public function list()
+    {
+        return view ('user.employee_list');
+    }
 }
