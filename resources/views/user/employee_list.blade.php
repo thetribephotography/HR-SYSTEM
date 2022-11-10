@@ -66,10 +66,10 @@
                                                   <th scope="col">Action</th>
                                               </thead>
                                               {{-- gy-3 --}}
-                                              <tbody class="inner_div overflow-hidden">
+                                              <tbody class="inner_div">
                                                 @foreach ($list as $employee)
-                                                 <div class="">
-                                                      <tr class="tr-setting col ">
+                                                <div class="table-set">
+                                                      <tr class="tr-setting col">
                                                           <td>{{$employee->id}}</td>
                                                           <td> {{$employee->first_name}} </td>
                                                           <td> {{$employee->last_name}} </td>
@@ -78,16 +78,16 @@
                                                           <td class="td-actions text-right">
                                                                <a href="#" class="btn btn-sm btn-secondary"
                                                                   data-toggle="tooltip" data-placement="bottom"> 
-                                                                   <i class="tim-icons icon-pencil">More Details</i>
+                                                                   <i class="tim-icons icon-pencil text-black">More Details</i>
                                                               </a>
                                                               <a href="#" class="btn btn-sm btn-secondary"
                                                                   data-toggle="tooltip" data-placement="bottom">
-                                                                  <i class="tim-icons icon-pencil">Edit</i>
+                                                                  <i class="tim-icons icon-pencil text-black">Edit</i>
                                                               </a>
                                                           </td>
                                                       </tr>
 
-                                                      <tr class="col">
+                                                      <tr class="tr-setting col">
                                                           <td>Namesssssss</td>
                                                           <td>productsssssssss</td>
                                                           <td>total cat</td>
