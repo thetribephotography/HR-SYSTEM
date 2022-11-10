@@ -16,5 +16,11 @@ class Employee extends Model
         'lasst_name',
         'email',
         'contact_no',
+        'dept_name',
     ];
+
+
+    public function dept(){
+        return $this->belongsTo(Department::class, 'dept_name');
+    }
 }

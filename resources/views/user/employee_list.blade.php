@@ -49,7 +49,6 @@
 
                   <div class="col-4 text-right">
                       <a href="{{route ('users.employee_reg')}}" class="btn btn-sm btn-primary">Register Employee</a>
-                      {{-- <a href="{{route ('employees.show')}}" class="btn btn-sm btn-primary">Employee List</a> --}}
                   </div>   
               </div>
 
@@ -66,10 +65,10 @@
                                                   <th scope="col">Action</th>
                                               </thead>
                                               {{-- gy-3 --}}
-                                              <tbody class="inner_div">
+                                              <tbody class="inner_div" id="tabs">
                                                 @foreach ($list as $employee)
                                                 <div class="table-set">
-                                                      <tr class="tr-setting col">
+                                                      <tr class="tr-setting col" >
                                                           <td>{{$employee->id}}</td>
                                                           <td> {{$employee->first_name}} </td>
                                                           <td> {{$employee->last_name}} </td>
