@@ -17,10 +17,15 @@ class Employee extends Model
         'email',
         'contact_no',
         'dept_name',
+        'state_name',
     ];
 
 
     public function dept(){
         return $this->belongsTo(Department::class, 'dept_name');
+    }
+
+    public function state(){
+        return $this->belongsTo(State::class, 'state_name');
     }
 }

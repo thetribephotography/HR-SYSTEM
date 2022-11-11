@@ -31,7 +31,9 @@
             <label for="origin" class="form-label">State Of Origin</label>
             <select class="form-select" id="origin">
               <option selected>Choose...</option>
-              <option value="1">i dey reason am</option>
+              @foreach($state as $state)
+              <option value="">{{$state->state_name}}</option>
+              @endforeach
             </select>
         </div>
       </div>
@@ -52,7 +54,9 @@
         <label for="dept" class="form-label">Department</label>
         <select class="form-select" id="dept">
           <option selected>Choose...</option>
-          <option value="1">i dey reason am tooo</option>
+          @foreach ($list as $dept)
+          <option value="">{{$dept->dept_name}}</option>
+          @endforeach
         </select>
       </div>
     </div>

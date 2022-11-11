@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Department;
+use App\Models\State;
 
 class HomeController extends Controller
 {
@@ -28,7 +30,11 @@ class HomeController extends Controller
 
     public function employee()
     {
-        return view ('user.employee_reg');
+        $list = Department::all();
+
+        $state = State::all();
+
+        return view ('user.employee_reg', compact ('list', 'state'));
     }
 
     public function list()
