@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Models\Employee;
 use App\Models\User;
 use App\Models\Department;
+use App\Models\State;
 
 
 class EmployeeController extends Controller
@@ -17,7 +18,22 @@ class EmployeeController extends Controller
           'lastname' => 'required', 
           'email' => 'required',
           'contact' => 'required',
+          'gender' => 'required',
+        //   'dept' => 'required',
+        //   'origin' => 'required',
+          'salary' =>'required',
+
         ]);
+
+        $status = 1;
+
+        // $gend = $request->gender;
+
+        // if(gend == 1){
+        //     $actgender = 'Male';
+        // } else{
+        //     $actgender = Female;
+        // }
 
         $employee = new Employee;
 
@@ -25,12 +41,19 @@ class EmployeeController extends Controller
         $employee->last_name = $request->lastname;
         $employee->email = $request->email;
         $employee->contact_no = $request->contact;
+        $employee->gender = $request->gender;
+        // $employee->state_id = $request->origin;
+        // $employee->dept_id = $request->dept;
+        $employee->salary = $request->salary;
+        // $employee->status = $status;
 
         $employee->save();
 
+        dd($employee);
+
         // $employee->redirect('autumn-name')->with (exmaple_most_onlift);
 
-        return redirect ('/home')->with('Employee Successfull');
+        // return redirect ('/home')->with('Employee Successfull');
     }
 
     public function show(){
