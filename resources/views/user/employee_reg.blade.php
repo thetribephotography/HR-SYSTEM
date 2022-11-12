@@ -5,7 +5,7 @@
 <div class="container-fluid mt--7">
     <div class="card">
         <div class="card-body">
-<form class="" method="POST" action="{{route ('employees.register') }}">
+<form class="" method="POST" action="{{route ('employees.register') }}" enctype="multipart/form-data">
     @csrf
     <div class="row">
         <div class="mb-3 col">
@@ -32,7 +32,7 @@
             <select class="form-select" id="origin">
               <option selected>Choose...</option>
               @foreach($state as $state)
-              <option value="">{{$state->state_name}}</option>
+              <option value="{{$state->id}}">{{$state->state_name}}</option>
               @endforeach
             </select>
         </div>
@@ -55,9 +55,14 @@
         <select class="form-select" id="dept">
           <option selected>Choose...</option>
           @foreach ($list as $dept)
-          <option value="">{{$dept->dept_name}}</option>
+          <option value="{{$dept->id}}">{{$dept->dept_name}}</option>
           @endforeach
         </select>
+      </div>
+      <div class="mb-3 col">
+        <label for="salary" class="form-label">Salary</label>
+        {{-- <span class="input-group-text">$</span> --}}
+        <input type="number" class="form-control" id="salary" name="salary" placeholder="">
       </div>
     </div>
     <div class="col-12">

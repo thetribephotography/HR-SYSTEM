@@ -16,8 +16,12 @@ class Employee extends Model
         'lasst_name',
         'email',
         'contact_no',
-        'dept_name',
-        'state_name',
+        'gender',
+        // 'state_id',
+        // 'dept_id',
+        'salary',
+        'status',
+
     ];
 
 
