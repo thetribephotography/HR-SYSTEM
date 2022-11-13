@@ -21,20 +21,16 @@
       <div class="row">
         <div class="mb-3 col">
             <label for="gender" class="form-label">Gender</label>
-            <select class="form-select" id="gender">
+            <select class="form-select" id="gender" name="gender">
               <option selected>Choose...</option>
               <option value="1">Male</option>
               <option value="2">Female</option>
             </select>
         </div>
-        <div class="col">
-            <label for="origin" class="form-label">State Of Origin</label>
-            <select class="form-select" id="origin">
-              <option selected>Choose...</option>
-              @foreach($state as $state)
-              <option value="{{$state->id}}">{{$state->state_name}}</option>
-              @endforeach
-            </select>
+        <div class="mb-3 col">
+          <label for="age" class="form-label">Age</label>
+          {{-- <span class="input-group-text">$</span> --}}
+          <input type="number" class="form-control" id="age" name="age" placeholder="">
         </div>
       </div>
 
@@ -50,9 +46,21 @@
     </div>
 
     <div class="mb-3 row">
+    <div class="col">
+      <label for="origin" class="form-label">State Of Origin</label>
+      <select class="form-select" id="origin" name="origin">
+        <option selected>Choose...</option>
+        @foreach($state as $state)
+        <option value="{{$state->id}}">{{$state->state_name}}</option>
+        @endforeach
+      </select>
+  </div>
+    </div>
+
+    <div class="mb-3 row">
       <div class="mb-3 col">
         <label for="dept" class="form-label">Department</label>
-        <select class="form-select" id="dept">
+        <select class="form-select" id="dept" name="dept">
           <option selected>Choose...</option>
           @foreach ($list as $dept)
           <option value="{{$dept->id}}">{{$dept->dept_name}}</option>
