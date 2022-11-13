@@ -58,10 +58,14 @@
                                           <table class="table table-borderless table-responsive" id=""> 
                                               <thead class=" text-white">
                                                   <th scope="col">EMPLOYEE_ID</th>
-                                                  <th scope="col">FIRST NAME</th>
-                                                  <th scope="col">LAST NAME</th>
+                                                  <th scope="col">NAME</th>
+                                                  <th scope="col">AGE</th>
+                                                  <th scope="col">GENDER</th>
+                                                  <th scope="col">STATE OF ORIGIN</th>
+                                                  <th scope="col">DEPARTMENT</th>
                                                   <th scope="col">EMAIL</th>
                                                   <th scope="col">CONTACT NO</th>
+                                                  <th scope="col">SALARY</th>
                                                   <th scope="col">Action</th>
                                               </thead>
                                               {{-- gy-3 --}}
@@ -70,10 +74,14 @@
                                                 <div class="table-set">
                                                       <tr class="tr-setting col" >
                                                           <td>{{$employee->id}}</td>
-                                                          <td> {{$employee->first_name}} </td>
-                                                          <td> {{$employee->last_name}} </td>
+                                                          <td> {{$employee->first_name}} {{$employee->last_name}} </td>
+                                                          <td> {{$employee->age}} </td>
+                                                          <td> {{$employee->gender}} </td>
+                                                          <td> {{$employee->state_name}} </td>
+                                                          <td> {{$employee->dept_name}} </td>
                                                           <td> {{$employee->email}} </td>
                                                           <td> {{$employee->contact_no}} </td>
+                                                          <td> {{$employee->salary}} </td>
                                                           <td class="td-actions text-right">
                                                                <a href="#" class="btn btn-sm btn-secondary"
                                                                   data-toggle="tooltip" data-placement="bottom"> 

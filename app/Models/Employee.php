@@ -17,8 +17,9 @@ class Employee extends Model
         'email',
         'contact_no',
         'gender',
-        // 'state_id',
-        // 'dept_id',
+        'age',
+        'state_id',
+        'dept_id',
         'salary',
         'status',
 

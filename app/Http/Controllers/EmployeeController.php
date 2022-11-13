@@ -8,32 +8,36 @@ use App\Models\Employee;
 use App\Models\User;
 use App\Models\Department;
 use App\Models\State;
+use Illuminate\Support\Facades\DB;
 
 
 class EmployeeController extends Controller
 {
     public function register(Request $request){
+            
+
         $validated = $request->validate([
           'firstname' => 'required',
           'lastname' => 'required', 
           'email' => 'required',
           'contact' => 'required',
           'gender' => 'required',
-        //   'dept' => 'required',
-        //   'origin' => 'required',
+          'age' => 'required',
+          'dept' => 'required',
+          'origin' => 'required',
           'salary' =>'required',
 
         ]);
 
-        $status = 1;
+        // return $request->all();
 
-        // $gend = $request->gender;
+        $gend = $request->gender;
 
-        // if(gend == 1){
-        //     $actgender = 'Male';
-        // } else{
-        //     $actgender = Female;
-        // }
+        if($gend == 1){
+          $gend_save = 'Male';
+        } else {
+          $gend_save = 'Female';
+        }
 
         $employee = new Employee;
 
@@ -41,25 +45,30 @@ class EmployeeController extends Controller
         $employee->last_name = $request->lastname;
         $employee->email = $request->email;
         $employee->contact_no = $request->contact;
-        $employee->gender = $request->gender;
-        // $employee->state_id = $request->origin;
-        // $employee->dept_id = $request->dept;
+        $employee->gender = $gend_save;
+        $employee->age = $request->age;
+        $employee->state_id = $request->origin;
+        $employee->dept_id = $request->dept;
         $employee->salary = $request->salary;
         // $employee->status = $status;
 
         $employee->save();
 
-        dd($employee);
+        // dd($employee);
 
-        // $employee->redirect('autumn-name')->with (exmaple_most_onlift);
-
-        // return redirect ('/home')->with('Employee Successfull');
+        return redirect ('/home')->with('Employee Successfull');
     }
 
     public function show(){
 
-        $list = Employee::all();
+        // $list = Employee::all();
 
-        return view('user.employee_list', compact('list'));
+        $list = DB::table('employees')
+        ->join('departments', 'departments.id', '=', 'employees.dept_id')
+        ->join('states', 'states.id', '=', 'employees.state_id')
+        ->get();
+
+        // return $list;
+        return view('user.employee_list', compact('list'));  
     }
 }

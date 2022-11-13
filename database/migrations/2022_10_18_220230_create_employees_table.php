@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('contact_no');
             $table->string('gender');
+            $table->unsignedBigInteger('age');
             $table->foreignId('state_id')->references('id')->on('states');
             $table->foreignId('dept_id')->references('id')->on('departments');
             $table->unsignedDouble('salary');
