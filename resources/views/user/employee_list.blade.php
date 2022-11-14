@@ -35,54 +35,52 @@
 
 </div> --}}
 
+<div class="gradient-custom">
 
-
-<div class="container-fluid gradient-custom bg-transparent border-none">
+<div class="container-fluid gradient-custom border-none">
   <div class="row justify-content-center overview">
       <div class="col-md-12">
-          <div class="card bg-transparent trans">
+          <div class="card bg-transparent trans ">
               {{-- <div class="card-header bg-transparent border-none">Employees{{ __('Dashboard') }} --}}
-              <div class="row heading-setting text-white">
+              <div class="row text-white ml-2 mr-0 mt-4">
                   <div class="col-8">
-                      <h4 class="ml-4">Employees</h4>
+                      <h4 class="heading-setting">Employee List</h4>
                   </div>
 
-                  <div class="col-4 text-right">
+                  <div class="col-4 mt-2">
                       <a href="{{route ('users.employee_reg')}}" class="btn btn-sm btn-primary">Register Employee</a>
                   </div>   
               </div>
 
-              <div class="card-body bg-transparent border-none">
-  
-                                      <div class="">
-                                          <table class="table table-borderless table-responsive" id=""> 
-                                              <thead class=" text-white">
-                                                  <th scope="col">EMPLOYEE_ID</th>
-                                                  <th scope="col">NAME</th>
-                                                  <th scope="col">AGE</th>
-                                                  <th scope="col">GENDER</th>
-                                                  <th scope="col">STATE OF ORIGIN</th>
-                                                  <th scope="col">DEPARTMENT</th>
-                                                  <th scope="col">EMAIL</th>
-                                                  <th scope="col">CONTACT NO</th>
-                                                  <th scope="col">SALARY</th>
-                                                  <th scope="col">Action</th>
-                                              </thead>
-                                              {{-- gy-3 --}}
-                                              <tbody class="inner_div" id="tabs">
+              <div class="card-body gradient-custom">
+                                        <div class="table-grid">
+                                            <div class="row table_head">
+                                                  <div class="col">EMPLOYEE_ID</div>
+                                                  <div class="col">NAME</div>
+                                                  <div class="col">AGE</div>
+                                                  <div class="col">GENDER</div>
+                                                  <div class="col">STATE OF ORIGIN</div>
+                                                  <div class="col">DEPARTMENT</div>
+                                                  <div class="col">EMAIL</div>
+                                                  <div class="col">CONTACT NO</div>
+                                                  <div class="col">SALARY</div>
+                                                  <div class="col">ACTION</div>
+                                            </div>
+                                        
+
                                                 @foreach ($list as $employee)
-                                                <div class="table-set">
-                                                      <tr class="tr-setting col" >
-                                                          <td>{{$employee->id}}</td>
-                                                          <td> {{$employee->first_name}} {{$employee->last_name}} </td>
-                                                          <td> {{$employee->age}} </td>
-                                                          <td> {{$employee->gender}} </td>
-                                                          <td> {{$employee->state_name}} </td>
-                                                          <td> {{$employee->dept_name}} </td>
-                                                          <td> {{$employee->email}} </td>
-                                                          <td> {{$employee->contact_no}} </td>
-                                                          <td> {{$employee->salary}} </td>
-                                                          <td class="td-actions text-right">
+                                                        <div class="row table_head">
+                                                            {{-- <div class=""></div> --}}
+                                                          <div class="col">{{$employee->id}}</div>
+                                                          <div class="col"> {{$employee->first_name}} {{$employee->last_name}} </div>
+                                                          <div class="col"> {{$employee->age}} </div>
+                                                          <div class="col"> {{$employee->gender}} </div>
+                                                          <div class="col"> {{$employee->state_name}} </div>
+                                                          <div class="col"> {{$employee->dept_name}} </div>
+                                                          <div class="col"> {{$employee->email}} </div>
+                                                          <div class="col"> {{$employee->contact_no}} </div>
+                                                          <div class="col"> {{$employee->salary}} </div>
+                                                          <div class=" col td-actions text-right">
                                                                <a href="#" class="btn btn-sm btn-secondary"
                                                                   data-toggle="tooltip" data-placement="bottom"> 
                                                                    <i class="tim-icons icon-pencil text-black">More Details</i>
@@ -91,10 +89,11 @@
                                                                   data-toggle="tooltip" data-placement="bottom">
                                                                   <i class="tim-icons icon-pencil text-black">Edit</i>
                                                               </a>
-                                                          </td>
-                                                      </tr>
+                                                          </div>
+                                                        </div>
+                                                      {{-- </tr> --}}
 
-                                                      <tr class="tr-setting col">
+                                                      {{-- <tr class="tr-setting col">
                                                           <td>Namesssssss</td>
                                                           <td>productsssssssss</td>
                                                           <td>total cat</td>
@@ -110,7 +109,7 @@
                                                                   <i class="tim-icons icon-pencil">Edit</i>
                                                               </a>
                                                               <form action="#" method="post"
-                                                                  class="d-inline">
+                                                                  class="d-inline"> --}}
                                                                   {{-- @csrf
                                                                   @method('delete') --}}
                                                                   {{-- <button type="button" class="btn btn-primary" data-toggle="tooltip"
@@ -119,23 +118,13 @@
                                                                       Delete<i class="tim-icons icon-simple-remove"></i>
                                                                   </button> --}}
                                                               </form>
-                                                          </td>
-                                                      </tr>
-                                                  </div>
                                                   @endforeach
-                                              </tbody>
-                                          </table>
-                                      </div>
-                                  </div>
-                                  <div class="card-footer py-4">
-                                      <nav class="d-flex justify-content-end" aria-label="...">
-                                         <p>nigboooo</p>
-                                      </nav>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>                        
+    </div>
 </div>
 
 @endsection
