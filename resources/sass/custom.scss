@@ -73,12 +73,24 @@
         // grid-template-columns: repeat(10, auto);
         grid-template-rows: repeat(1, auto);
         grid-row-gap: 10px;
+        grid-column-gap: 10px;
+        margin:  15px;
         // grid-column-gap: 10px;
         // grid-gap: 10px;
 
     }
 
     .table_head{
+        margin: 10px;
         text-align: left;
         align-items: left;
+        justify-content: space-evenly;
+    }
+
+    .table_border{
+        // display: block !important;
+        // border: ;
+        border-radius: 10px;
+         
+        // border-block: 10px;
     }

@@ -59,26 +59,26 @@
                                                   <div class="col">NAME</div>
                                                   <div class="col">AGE</div>
                                                   <div class="col">GENDER</div>
-                                                  <div class="col">STATE OF ORIGIN</div>
+                                                  {{-- <div class="col">STATE OF ORIGIN</div> --}}
                                                   <div class="col">DEPARTMENT</div>
-                                                  <div class="col">EMAIL</div>
-                                                  <div class="col">CONTACT NO</div>
+                                                  {{-- <div class="col">EMAIL</div>
+                                                  <div class="col">CONTACT NO</div> --}}
                                                   <div class="col">SALARY</div>
                                                   <div class="col">ACTION</div>
                                             </div>
                                         
 
                                                 @foreach ($list as $employee)
-                                                        <div class="row table_head">
+                                                        <div class="row table_head table_border">
                                                             {{-- <div class=""></div> --}}
                                                           <div class="col">{{$employee->id}}</div>
                                                           <div class="col"> {{$employee->first_name}} {{$employee->last_name}} </div>
                                                           <div class="col"> {{$employee->age}} </div>
                                                           <div class="col"> {{$employee->gender}} </div>
-                                                          <div class="col"> {{$employee->state_name}} </div>
+                                                          {{-- <div class="col"> {{$employee->state_name}} </div> --}}
                                                           <div class="col"> {{$employee->dept_name}} </div>
-                                                          <div class="col"> {{$employee->email}} </div>
-                                                          <div class="col"> {{$employee->contact_no}} </div>
+                                                          {{-- <div class="col"> {{$employee->email}} </div>
+                                                          <div class="col"> {{$employee->contact_no}} </div> --}}
                                                           <div class="col"> {{$employee->salary}} </div>
                                                           <div class=" col td-actions text-right">
                                                                <a href="#" class="btn btn-sm btn-secondary"
