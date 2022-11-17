@@ -71,4 +71,12 @@ class EmployeeController extends Controller
         // return $list;
         return view('user.employee_list', compact('list'));  
     }
+
+    public function individual($id){
+      $ind = Employee::find($id);
+
+      dd($ind);
+
+      // return view ('user.employee_update')->with('ind', $ind);
+    }
 }

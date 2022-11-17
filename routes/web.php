@@ -34,4 +34,6 @@ Route::post('employee/register', [EmployeeController::class, 'register'])->name(
 // Route::get('user/employee_list', [HomeController::class, 'list'])->name('users.employee_list');
 Route::any('employee/show', [EmployeeController::class, 'show'])->name('employees.show');
 
+Route::get('/employee/individual/{id}', [EmployeeController::class, 'individual'])->name('employees.individual');
+
 
