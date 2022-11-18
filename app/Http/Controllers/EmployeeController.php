@@ -75,8 +75,8 @@ class EmployeeController extends Controller
     public function individual($id){
       $ind = Employee::find($id);
 
-      dd($ind);
+      // dd($ind);
 
-      // return view ('user.employee_update')->with('ind', $ind);
+      return view ('user.employee_update')->with('ind', $ind);
     }
 }
