@@ -81,10 +81,10 @@
                                                           <div class="col"> {{$employee->contact_no}} </div> --}}
                                                           <div class="col"> {{$employee->salary}} </div>
                                                           <div class=" col td-actions text-right">
-                                                               <a href="#" class="btn btn-sm btn-secondary"
+                                                               {{-- <a href="#" class="btn btn-sm btn-secondary"
                                                                   data-toggle="tooltip" data-placement="bottom"> 
                                                                    <i class="tim-icons icon-pencil text-black">More Details</i>
-                                                              </a>
+                                                              </a> --}}
                                                               <a href="/employee/individual/{id}" class="btn btn-sm btn-secondary"
                                                                   data-toggle="tooltip" data-placement="bottom">
                                                                   <i class="tim-icons icon-pencil text-black">Edit</i>
