@@ -94,3 +94,19 @@
          
         // border-block: 10px;
     }
+
+    .border_non{
+        border: hidden !important;
+        border-top: white !important;
+        border-color: white !important;
+        border-left: white !important;
+        border-right: white !important;
+        border-bottom: black;
+        border-width: 50px;
+        background-color: white;
+    
+    }
+
+    .p_style{
+
+    }

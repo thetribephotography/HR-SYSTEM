@@ -61,22 +61,25 @@ class EmployeeController extends Controller
 
     public function show(){
 
-        // $list = Employee::all();
+        $list = Employee::all();
 
-        $list = DB::table('employees')
-        ->join('departments', 'departments.id', '=', 'employees.dept_id')
-        ->join('states', 'states.id', '=', 'employees.state_id')
-        ->get();
+        // $list = DB::table('employees')
+        // ->join('departments', 'departments.id', '=', 'employees.dept_id')
+        // ->join('states', 'states.id', '=', 'employees.state_id')
+        // ->get();
 
         // return $list;
         return view('user.employee_list', compact('list'));  
     }
 
     public function individual($id){
-      $ind = Employee::find($id);
 
-      // dd($ind);
+      // $ind = Employee::find($id);
 
-      return view ('user.employee_update')->with('ind', $ind);
+      $ind = DB::table('employees')->find($id);
+
+      dd($ind);
+
+      // return view ('user.employee_update', compact('ind'));
     }
 }
