@@ -52,7 +52,7 @@
                   </div>   
               </div>
 
-              <div class="card-body gradient-custom">
+              <div class="card-body">
                                         <div class="table-grid">
                                             <div class="row table_head">
                                                   <div class="col">EMPLOYEE_ID</div>
@@ -65,14 +65,15 @@
                                                   <div class="col">CONTACT NO</div> --}}
                                                   <div class="col">SALARY</div>
                                                   <div class="col">ACTION</div>
+                                                  {{-- <hr class="mb-0" style="color: white"> --}}
                                             </div>
                                         
 
                                                 @foreach ($list as $employee)
-                                                        <div class="row table_head table_border">
+                                                        <div class="row table_border">
                                                             {{-- <div class=""></div> --}}
                                                           <div class="col">{{$employee->id}}</div>
-                                                          <div class="col"> {{$employee->first_name}} {{$employee->last_name}} </div>
+                                                          <div class="col"> {{$employee->last_name}} {{$employee->first_name}} </div>
                                                           <div class="col"> {{$employee->age}} </div>
                                                           <div class="col"> {{$employee->gender}} </div>
                                                           {{-- <div class="col"> {{$employee->state_name}} </div> --}}
@@ -85,9 +86,10 @@
                                                                   data-toggle="tooltip" data-placement="bottom"> 
                                                                    <i class="tim-icons icon-pencil text-black">More Details</i>
                                                               </a> --}}
-                                                              <a href="/employee/individual/{id}" class="btn btn-sm btn-secondary"
+                                                              <a href="/employee/individual/{$id}" class="btn btn-sm btn-primary"
                                                                   data-toggle="tooltip" data-placement="bottom">
-                                                                  <i class="tim-icons icon-pencil text-black">Edit</i>
+                                                                  <i class="bi bi-vector-pen">Edit</i>
+                                                                  {{-- <i class="tim-icons icon-pencil text-black"></i> --}}
                                                               </a>
                                                           </div>
                                                         </div>

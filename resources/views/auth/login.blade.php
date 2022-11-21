@@ -3,11 +3,15 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-10 pt-5">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                {{-- <div class="card-header">{{ __('Login') }}</div> --}}
 
-                <div class="card-body">
+                <div class="card-body log_grid">
+                    <div class="log_2">
+                        <img src="" alt=""> blahhhhh
+                    </div>
+                    <div class="log_2 log_coperate">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
@@ -66,6 +70,7 @@
                         </div>
                     </form>
                 </div>
+            </div>
             </div>
         </div>
     </div>

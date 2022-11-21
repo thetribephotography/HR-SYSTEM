@@ -28,6 +28,8 @@ Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
+
+Route::prefix('')->middleware(['auth'])->group(function(){
 Route::get('user/employee_reg', [HomeController::class, 'employee'])->name('users.employee_reg');
 Route::post('employee/register', [EmployeeController::class, 'register'])->name('employees.register');
 
@@ -39,3 +41,4 @@ Route::any('/employee/individual/{id}', [EmployeeController::class, 'individual'
 // Route::post('')
 
 
+});
