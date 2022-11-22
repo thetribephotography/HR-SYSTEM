@@ -9,7 +9,7 @@ use App\Models\User;
 use App\Models\Department;
 use App\Models\State;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\Facades\Auth;
 
 class EmployeeController extends Controller
 {
@@ -74,7 +74,9 @@ class EmployeeController extends Controller
 
     public function individual($id){
 
-      $ind = Employee::find($id);
+      // $id_verison = Auth::id();
+
+      $ind = Employee::find($id_verison);
 
       // $ind = DB::table('employees')->find($id);
 
