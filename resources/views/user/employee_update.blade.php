@@ -8,7 +8,7 @@
     <div class="card-header">Employee Information</div>
     <div class="card-body">
         @csrf
-        <form action="" method="POST">
+        <form action="" method="POST" enctype="multipart/form-data">
       {{-- <h5 class="card-title"></h5> --}}
       {{-- <p class="card-text">
         Some quick example text to build on the card title and make up the bulk of the
@@ -61,23 +61,22 @@
         <div class="col">
           <label for="origin" class="form-label">State Of Origin</label>
           <select class="form-select" id="origin" name="origin">
-            <option selected>{{$ind->state_id}}</option>
+            <option value="" selected> {{$ind->state_name}} </option>
             @foreach($ind as $state)
-            <option value="">{{$state->state_id}}</option>
+            <option value="">{{$state->state_name}}</option>
             @endforeach
           </select>
       </div>
-      </div>
-      <div class="row">
         <div class="mb-3 col">
           <label for="dept" class="form-label">Department</label>
           <select class="form-select" id="dept" name="dept">
-            <option selected>{{$ind->dept_id}}</option>
+            <option value="{{$ind->dept_name}}" selected></option>
             @foreach ($ind as $dept)
-            <option value="">{{$dept->dept_id}}</option>
+            <option value="  ">{{$dept->dept_name}}</option>
             @endforeach
           </select>
-        </div>
+        </div> 
+        </div> 
   
       <button type="submit" class="btn btn-primary">Button</button>
 

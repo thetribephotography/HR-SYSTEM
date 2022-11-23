@@ -133,6 +133,10 @@
 
     //            LOGINNNNNNNNNNNNNN
 
+
+
+    //              CUSTOM STUFFFFFFFFFFFFFFFFFFF
+
     .log_grid{
         display: grid;
         grid-template-columns: repeat(2, 500px);
@@ -142,4 +146,25 @@
     .log_coperate{
         justify-content: center;
         margin-top: 200px;
+    }
+
+    .nav li .active-page{
+        background-color: white;
+        color: #2519cb;
+    }
+    .nav li a{
+        color: white;
+    }
+    .nav li a:hover{
+        background-color: white;
+        color: rgb(43, 55, 226);
+    }
+    .myNav{
+        border-top-right-radius: 10px;
+    }
+    .btn-purple{
+        background-color: rgb(6, 6, 6);
+        color: white;
+        border: none;
+        border-radius: 20px;
     }

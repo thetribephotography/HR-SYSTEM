@@ -50,7 +50,7 @@
       <label for="origin" class="form-label">State Of Origin</label>
       <select class="form-select" id="origin" name="origin">
         <option selected>Choose...</option>
-        @foreach($state as $state)
+        @foreach($list as $state)
         <option value="{{$state->id}}">{{$state->state_name}}</option>
         @endforeach
       </select>
