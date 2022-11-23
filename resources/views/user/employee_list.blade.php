@@ -86,8 +86,8 @@
                                                                   data-toggle="tooltip" data-placement="bottom"> 
                                                                    <i class="tim-icons icon-pencil text-black">More Details</i>
                                                               </a> --}}
-                                                              
-                                                              <a href="/employee/individual/{$id}" class="btn btn-sm btn-primary"
+
+                                                              <a href="{{route ('employees.individual', $employee->id) }}" class="btn btn-sm btn-primary"
                                                                   data-toggle="tooltip" data-placement="bottom">
                                                                   <i class="bi bi-vector-pen">Edit</i>
                                                                   {{-- <i class="tim-icons icon-pencil text-black"></i> --}}

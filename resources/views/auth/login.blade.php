@@ -9,7 +9,7 @@
 
                 <div class="card-body log_grid">
                     <div class="log_2">
-                        <img src="" alt=""> blahhhhh
+                        <img src="../images/bulogo.png" alt="A BUCC LOGO">
                     </div>
                     <div class="log_2 log_coperate">
                     <form method="POST" action="{{ route('login') }}">
