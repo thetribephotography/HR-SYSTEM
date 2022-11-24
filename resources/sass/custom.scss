@@ -133,10 +133,6 @@
 
     //            LOGINNNNNNNNNNNNNN
 
-
-
-    //              CUSTOM STUFFFFFFFFFFFFFFFFFFF
-
     .log_grid{
         display: grid;
         grid-template-columns: repeat(2, 500px);
@@ -148,19 +144,23 @@
         margin-top: 200px;
     }
 
+
+
+    //              CUSTOM STUFFFFFFFFFFFFFFFFFFF
+
     .nav li .active-page{
         background-color: white;
         color: #2519cb;
     }
     .nav li a{
-        color: white;
+        // color: white;
     }
     .nav li a:hover{
         background-color: white;
         color: rgb(43, 55, 226);
     }
     .myNav{
-        border-top-right-radius: 10px;
+        border-top-right-radius: 6px;
     }
     .btn-purple{
         background-color: rgb(6, 6, 6);

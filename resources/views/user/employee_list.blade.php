@@ -3,39 +3,32 @@
 
 @section('content')
 
-{{-- <div class="container-fluid py-6">
-  <div class="card"></div>
-<div class="table-responsive">
-<table class="table table-striped table-hover table-bordered ">
-    <thead class="table-gray">
-        <tr>
-            <th scope="col">EMPLOYEE_ID</th>
-            <th scope="col">FIRST NAME</th>
-            <th scope="col">LAST NAME</th>
-            <th scope="col">EMAIL</th>
-            <th scope="col">CONTACT NO.</th>
-          </tr>
-      </thead>
-      <tbody>
-        @foreach ($list as $employee)
-            
-        
-        <tr>
-            <th scope="row">{{$employee->id}}</th>
-            <td>{{$employee->first_name}} </td>
-            <td>  {{$employee->last_name}}  </td>
-            <td>{{$employee->email}}</td>
-            <td>{{$employee->contact_no}}</td>
-          </tr>
-          @endforeach
-      </tbody>
-  </table>
-
-</div>
-
-</div> --}}
-
 <div class="gradient-custom">
+    <div class="d-flex">
+
+        <div class="d-flex flex-column flex-shrink-0 p-3 col-2 border-end position-sticky sidebar collapse fixed-top myNav" style="height: 100vh; background:linear-gradient(to top right,  rgba(149,163,223,0.6), rgba(155,105,201,0.6));">
+          <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+              <a href="{{route ('home')}}" class="nav-link active-page" aria-current="page">
+                <i class='bi bi-speedometer' style="color: #000000;"></i>
+                  <span>DashBoard</span>
+              </a>
+            </li>
+            <li>
+              <a href=" {{route ('users.employee_reg')}} " class="nav-link">
+                <i class='bi bi-person-fill-add'></i>
+                Register Employee
+              </a>
+            </li>
+            <li>
+              <a href=" {{route ('employees.show') }} " class="nav-link">
+                <i class='bi bi-person-lines-fill'></i>
+                Employee List
+              </a>
+            </li>
+          </ul>
+      
+        </div>
 
 <div class="container-fluid gradient-custom border-none">
   <div class="row justify-content-center overview">
@@ -129,5 +122,6 @@
         </div>                        
     </div>
 </div>
+    </div>
 
 @endsection
