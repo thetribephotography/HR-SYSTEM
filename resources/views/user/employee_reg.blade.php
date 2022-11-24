@@ -2,7 +2,37 @@
 
 
 @section('content')
-<div class="container-fluid mt--7">
+
+<div class="d-flex">
+
+    <div class="d-flex flex-column flex-shrink-0 p-3 col-2 border-end position-sticky sidebar collapse fixed-top myNav" style="height: 100vh; background-color:#f1edf8;">
+      <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item">
+          <a href="{{route ('home')}}" class="nav-link active-page" aria-current="page">
+            <i class='bi bi-speedometer' style="color: #000000;"></i>
+              <span>DashBoard</span>
+          </a>
+        </li>
+        <li>
+          <a href=" {{route ('users.employee_reg')}} " class="nav-link">
+            <i class='bi bi-person-fill-add'></i>
+            Register Employee
+          </a>
+        </li>
+        <li>
+          <a href=" {{route ('employees.show') }} " class="nav-link">
+            <i class='bi bi-person-lines-fill'></i>
+            Employee List
+          </a>
+        </li>
+      </ul>
+  
+    </div>
+  
+
+
+{{-- <div class="d-flex flex-column flex-shrink-0 p-2 bg-white col-12 col-lg-10" id="main"> --}}
+<div class="container-fluid mt-2">
     <div class="card">
         <div class="card-body">
 <form class="" method="POST" action="{{route ('employees.register') }}" enctype="multipart/form-data">
@@ -50,7 +80,7 @@
       <label for="origin" class="form-label">State Of Origin</label>
       <select class="form-select" id="origin" name="origin">
         <option selected>Choose...</option>
-        @foreach($list as $state)
+        @foreach($state as $state)
         <option value="{{$state->id}}">{{$state->state_name}}</option>
         @endforeach
       </select>
@@ -80,7 +110,8 @@
 </div>
 </div>
 </div>
-
+{{-- </div> --}}
+</div>
 
 
 @endsection

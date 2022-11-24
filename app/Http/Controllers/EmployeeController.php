@@ -86,7 +86,45 @@ class EmployeeController extends Controller
       return view('user.employee_update', compact('ind'));
     }
 
-    // public function count(){
+    public function update(Request $request){
+      if ($request->all() == ''){
+        return view ('/home')->with ('No Update Made');
+      } else{
+      $data = Employee::find($request->id);
 
-    // }
+      $gend = $request->gender;
+
+      if($gend == 1){
+        $gend_save = 'Male';
+      } else {
+        $gend_save = 'Female';
+      }
+
+      $data->first_name = $request->firstname;
+      $data->last_name = $request->lastname;
+      $data->gender = $request->gend_save;
+      $data->email = $request-email;
+      $data->contact_no = $request->contact;
+      $data->age = $request->age;
+      // $data->state_id = $request->origin;
+      // $data->dept_id = $request->dept;
+      $data->salary = $request->salary;
+      $data->status = $request->status;
+
+      $data->update();
+
+      
+
+      // upload = Employee::where('id', $id)->update(all());
+
+      // return $data;
+
+
+
+
+
+      // return view ('/home')->with ('Update Successful');
+
+    }
+    }
 }

@@ -14,37 +14,34 @@
 </div> --}}
 
 <div class="d-flex">
-    <div class="d-flex flex-column flex-shrink-0 p-3 col-2 border-end position-sticky sidebar collapse fixed-top myNav" style="height: 100vh; background-color:#f1edf8;">
-        {{-- <a href="/" class="d-flex align-items-center justify-content-around gap-3 mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-          <span class="fs-4 fw-bold">BuMIs</span>
-        </a> --}}
-        <ul class="nav nav-pills flex-column mb-auto">
-          <li class="nav-item">
-            <a href="#" class="nav-link active-page" aria-current="page">
-              <i class='bi bi-speedometer' style="color: #000000;"></i>
-                <span>DashBoard</span>
-            </a>
-          </li>
-          <li>
-            <a href=" {{route ('users.employee_reg')}} " class="nav-link">
-              <i class='bi bi-person-fill-add'></i>
-              Register Employee
-            </a>
-          </li>
-          <li>
-            <a href=" {{route ('employees.show') }} " class="nav-link">
-              <i class='bi bi-person-lines-fill'></i>
-              Employee List
-            </a>
-          </li>
-        </ul>
+  <div class="d-flex flex-column flex-shrink-0 p-3 col-2 border-end position-sticky sidebar collapse fixed-top myNav" style="height: 100vh; background-color:#f1edf8;">
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item">
+        <a href="{{route ('home')}}" class="nav-link active-page" aria-current="page">
+          <i class='bi bi-speedometer' style="color: #000000;"></i>
+            <span>DashBoard</span>
+        </a>
+      </li>
+      <li>
+        <a href=" {{route ('users.employee_reg')}} " class="nav-link">
+          <i class='bi bi-person-fill-add'></i>
+          Register Employee
+        </a>
+      </li>
+      <li>
+        <a href=" {{route ('employees.show') }} " class="nav-link">
+          <i class='bi bi-person-lines-fill'></i>
+          Employee List
+        </a>
+      </li>
+    </ul>
 
-      </div>
+  </div>
 
       <div class="d-flex flex-column flex-shrink-0 p-2 bg-white col-12 col-lg-10" id="main">
 
-        <div class="px-3 pb-2" id="custom-cards">
-        <h4 class=" mb-4 mt-3">Employees Information</h4>
+        <div class="px-3 pb-2 mt-3" id="custom-cards">
+        {{-- <h4 class=" mb-4 mt-3">Employees Information</h4> --}}
             <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 pb-5">
 
               <div class="col">
@@ -54,7 +51,7 @@
                     </div>
                   <div class="d-flex flex-column h-100 ps-3 pt-0 pb-4 text-white text-shadow-1">
                     <p class="h4 lh-1 fw-bold">Total number of Employees</p>
-                    <p class="h4 lh-1 fw-bold">156</p>
+                    <b class="h4 lh-1 fw-bold">{{ $count = DB::table('employees')->count(); }}</b>
                   </div>
                 </div>
               </div>

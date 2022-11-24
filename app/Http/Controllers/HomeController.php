@@ -31,7 +31,6 @@ class HomeController extends Controller
     public function employee()
     {
         $list = Department::all();
-
         $state = State::all();
 
         return view ('user.employee_reg', compact ('list', 'state'));

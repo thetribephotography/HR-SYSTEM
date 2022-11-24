@@ -7,8 +7,9 @@
 <div class="card border border-primary shadow-0 ">
     <div class="card-header">Employee Information</div>
     <div class="card-body">
-        @csrf
-        <form action="" method="POST" enctype="multipart/form-data">
+        
+        <form action="{{route ('employees.update')}}" method="POST" enctype="multipart/form-data">
+          @csrf
       {{-- <h5 class="card-title"></h5> --}}
       {{-- <p class="card-text">
         Some quick example text to build on the card title and make up the bulk of the
@@ -16,28 +17,34 @@
       </p> --}}
       <div class="row">
         <div class="mb-3 col">
-            {{-- <label for="firstname" class="">First Name</label> --}}
-            <p class="p_style"> First Name:</p>
-          <input type="text" name="firstname" value=" {{$ind->first_name}} " id="firstname" class="border_non" placeholder="First name" aria-label="First name">
+            <label for="firstname" class="">First Name</label>
+            {{-- <p class="p_style"> First Name:</p> --}}
+          <input type="text" name="firstname" value=" {{$ind->first_name}} " id="firstname" class="form-control" placeholder="First name" aria-label="First name">
         </div>
         <div class="col">
-            {{-- <label for="lastname" class="p_style">Last Name:</label> --}}
-            <p class="p_style"> Last Name:</p>
-          <input type="text" name="lastname" value="{{$ind->last_name}}" id="lastname" class="border_non" placeholder="Last name" aria-label="Last name">
+            <label for="lastname" class="">Last Name</label>
+            {{-- <p class="p_style"> Last Name:</p> --}}
+          <input type="text" name="lastname" value="{{$ind->last_name}}" id="lastname" class="form-control" placeholder="Last name" aria-label="Last name">
         </div>
       </div>
       <div class="row">
         <div class="mb-3 col">
             <label for="gender" class="form-label">Gender</label>
             <select class="form-select" id="gender" name="gender">
+              @if ($ind->gender == 'Male')
+              <option selected> {{ $ind->gender }} </option>
+              <option value="2">Female</option>
+
+              @else
               <option selected> {{ $ind->gender }} </option>
               <option value="1">Male</option>
-              <option value="2">Female</option>
+
+              @endif
             </select>
         </div>
         <div class="mb-3 col">
-          {{-- <label for="age" class="form-label">Age</label> --}}
-          <p class="p_style"> Age:</p>
+          <label for="age" class="form-label">Age</label>
+          {{-- <p class="p_style"> Age:</p> --}}
           {{-- <span class="input-group-text">$</span> --}}
           <input type="number" class="form-control" id="age" value="{{ $ind->age }}" name="age">
         </div>
@@ -57,7 +64,7 @@
   
       </div>
 
-      <div class="row">
+      {{-- <div class="row">
         <div class="col">
           <label for="origin" class="form-label">State Of Origin</label>
           <select class="form-select" id="origin" name="origin">
@@ -76,9 +83,32 @@
             @endforeach
           </select>
         </div> 
-        </div> 
+        </div>  --}}
+
+        <div class="row">
+          <div class="mb-3 col">
+            <label for="salary" class="form-label">Salary</label>
+            {{-- <span class="input-group-text">$</span> --}}
+            <input type="number" class="form-control" value="{{$ind->salary}}" id="salary" name="salary" placeholder="">
+          </div>
+          <div class="mb-3 col">
+            <label for="status" class="form-label">Status</label>
+            <select class="form-select" id="status" name="status">
+              @if ($ind->status == 1)
+              <option value="{{$ind->status}}" selected> Active </option>
+              <option value="2">Inactive</option>
+
+              @else 
+
+              <option value="{{$ind->status}}" selected> Inactive </option>
+              <option value="1">Active</option>
+
+              @endif
+            </select>
+          </div>
+        </div>
   
-      <button type="submit" class="btn btn-primary">Button</button>
+      <button type="submit" class="btn btn-success">Update</button>
 
     </form>
     </div>
