@@ -81,7 +81,7 @@
       <select class="form-select" id="origin" name="origin">
         <option selected>Choose...</option>
         @foreach($state as $state)
-        <option value="{{$state->id}}">{{$state->state_name}}</option>
+        <option value="{{$state->state_id}}">{{$state->state_name}}</option>
         @endforeach
       </select>
   </div>
@@ -93,7 +93,7 @@
         <select class="form-select" id="dept" name="dept">
           <option selected>Choose...</option>
           @foreach ($list as $dept)
-          <option value="{{$dept->id}}">{{$dept->dept_name}}</option>
+          <option value="{{$dept->dept_id}}">{{$dept->dept_name}}</option>
           @endforeach
         </select>
       </div>

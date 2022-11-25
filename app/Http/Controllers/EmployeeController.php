@@ -29,23 +29,13 @@ class EmployeeController extends Controller
 
         ]);
 
-        // return $request->all();
-
-        $gend = $request->gender;
-
-        if($gend == 1){
-          $gend_save = 'Male';
-        } else {
-          $gend_save = 'Female';
-        }
-
         $employee = new Employee;
 
         $employee->first_name = $request->firstname;
         $employee->last_name = $request->lastname;
         $employee->email = $request->email;
         $employee->contact_no = $request->contact;
-        $employee->gender = $gend_save;
+        $employee->gender = $request->gender;
         $employee->age = $request->age;
         $employee->state_id = $request->origin;
         $employee->dept_id = $request->dept;
@@ -77,6 +67,15 @@ class EmployeeController extends Controller
 
       $ind = Employee::find($id);
 
+      // $fire = $request->id;
+
+      // $ind = DB::table('employees')
+      // ->join('departments', 'departments.id', '=', 'employees.dept_id')
+      // ->join('states', 'states.id', '=', 'employees.state_id')
+      // ->select('departments.dept_name as dept_name', 'departments.id as dept_id', 'states.state_name as state_name', 'states.id as state_id', 'employees.*')
+      // ->where('employees.id', $id)
+      // ->get();
+
       // $ind = DB::table('employees')->find($id);
 
       // return $ind;
@@ -92,28 +91,20 @@ class EmployeeController extends Controller
       } else{
       $data = Employee::find($request->id);
 
-      $gend = $request->gender;
-
-      if($gend == 1){
-        $gend_save = 'Male';
-      } else {
-        $gend_save = 'Female';
-      }
-
       $data->first_name = $request->firstname;
       $data->last_name = $request->lastname;
-      $data->gender = $request->gend_save;
-      $data->email = $request-email;
+      $data->gender = $request->gender;
+      $data->email = $request->email;
       $data->contact_no = $request->contact;
       $data->age = $request->age;
-      // $data->state_id = $request->origin;
-      // $data->dept_id = $request->dept;
+      $data->state_id = $request->origin;
+      $data->dept_id = $request->dept;
       $data->salary = $request->salary;
       $data->status = $request->status;
 
-      $data->update();
+      // dd($data);
 
-      
+      $data->update();
 
       // upload = Employee::where('id', $id)->update(all());
 
@@ -123,7 +114,7 @@ class EmployeeController extends Controller
 
 
 
-      // return view ('/home')->with ('Update Successful');
+      return view ('/home')->with ('Update Successful');
 
     }
     }

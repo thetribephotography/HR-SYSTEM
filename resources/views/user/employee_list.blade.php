@@ -68,7 +68,13 @@
                                                           <div class="col">{{$employee->id}}</div>
                                                           <div class="col"> {{$employee->last_name}} {{$employee->first_name}} </div>
                                                           <div class="col"> {{$employee->age}} </div>
-                                                          <div class="col"> {{$employee->gender}} </div>
+                                                          <div class="col"> 
+                                                            @if ($employee->gender == 1)
+                                                                Male
+                                                            @else
+                                                                Female
+                                                            @endif
+                                                        </div>
                                                           {{-- <div class="col"> {{$employee->state_name}} </div> --}}
                                                           <div class="col"> {{$employee->dept_name}} </div>
                                                           {{-- <div class="col"> {{$employee->email}} </div>

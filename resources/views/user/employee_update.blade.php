@@ -8,8 +8,9 @@
     <div class="card-header">Employee Information</div>
     <div class="card-body">
         
-        <form action="{{route ('employees.update')}}" method="POST" enctype="multipart/form-data">
+        <form action="{{route ('employees.update', $ind->id)}}" method="post" enctype="multipart/form-data">
           @csrf
+          @method('PUT')
       {{-- <h5 class="card-title"></h5> --}}
       {{-- <p class="card-text">
         Some quick example text to build on the card title and make up the bulk of the
@@ -30,15 +31,17 @@
       <div class="row">
         <div class="mb-3 col">
             <label for="gender" class="form-label">Gender</label>
-            <select class="form-select" id="gender" name="gender">
-              @if ($ind->gender == 'Male')
-              <option selected> {{ $ind->gender }} </option>
-              <option value="2">Female</option>
-
-              @else
-              <option selected> {{ $ind->gender }} </option>
-              <option value="1">Male</option>
-
+            <select class="form-select" id="gender" name="gender">           
+              <option value="{{$ind->gender}}">
+                @if($ind->gender == 1)
+                Male
+              </option>
+              <option value="2"> Female </option>
+              <option value=" {{$ind->gender}} "> 
+                @else
+                Female
+              </option>
+              <option value="1"> Male</option>
               @endif
             </select>
         </div>
@@ -64,26 +67,28 @@
   
       </div>
 
-      {{-- <div class="row">
+      <div class="row">
         <div class="col">
           <label for="origin" class="form-label">State Of Origin</label>
           <select class="form-select" id="origin" name="origin">
-            <option value="" selected> {{$ind->state_name}} </option>
+            {{-- <option value=" {{$ind->state_id}} " selected> {{$ind->state_name}} </option> --}}
+            <option value="" selected>Choose</option>
             @foreach($ind as $state)
-            <option value="">{{$state->state_name}}</option>
+            <option value=" {{$state->id}} "> {{$state->state_name}} </option>
             @endforeach
           </select>
       </div>
         <div class="mb-3 col">
           <label for="dept" class="form-label">Department</label>
           <select class="form-select" id="dept" name="dept">
-            <option value="{{$ind->dept_name}}" selected></option>
+            {{-- <option value="{{$ind->dept_id}}" selected> {{$ind->dept_name}} </option> --}}
+            <option value="" selected> Choose</option>
             @foreach ($ind as $dept)
-            <option value="  ">{{$dept->dept_name}}</option>
+            <option value=" {{$dept->id}} ">{{$dept->dept_name}}</option>
             @endforeach
           </select>
         </div> 
-        </div>  --}}
+        </div> 
 
         <div class="row">
           <div class="mb-3 col">
