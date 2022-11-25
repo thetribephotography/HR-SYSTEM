@@ -37,7 +37,7 @@ Route::post('employee/register', [EmployeeController::class, 'register'])->name(
 Route::any('employee/show', [EmployeeController::class, 'show'])->name('employees.show');
 
 Route::any('/employee/individual/{id}', [EmployeeController::class, 'individual'])->name('employees.individual');
-Route::any('/employee/update', [EmployeeController::class, 'update'])->name('employees.update');
+Route::any('/employee/update/{id}', [EmployeeController::class, 'update'])->name('employees.update');
 
 // Route::post('')
 
