@@ -65,31 +65,40 @@ class EmployeeController extends Controller
 
     public function individual($id, Request $request){
 
-      $ind = Employee::find($id);
+      // $ind = Employee::find($id);
+
+      // $value = 
 
       // $fire = $request->id;
 
-      // $ind = DB::table('employees')
-      // ->join('departments', 'departments.id', '=', 'employees.dept_id')
-      // ->join('states', 'states.id', '=', 'employees.state_id')
-      // ->select('departments.dept_name as dept_name', 'departments.id as dept_id', 'states.state_name as state_name', 'states.id as state_id', 'employees.*')
-      // ->where('employees.id', $id)
-      // ->get();
+      $ind = DB::table('employees')
+      ->join('departments', 'departments.id', '=', 'employees.dept_id')
+      ->join('states', 'states.id', '=', 'employees.state_id')
+      ->select('departments.dept_name as dept_name', 'departments.id as dept_id', 'states.state_name as state_name', 'states.id as state_id', 'employees.*')
+      ->where('employees.id', $id)
+      ->first();
+
+
+      $state = State:: all();
+      $depart = Department::all();
 
       // $ind = DB::table('employees')->find($id);
 
-      // return $ind;
+      // return $state;
 
       // dd($ind);
 
-      return view('user.employee_update', compact('ind'));
+      return view('user.employee_update', compact('ind', 'state', 'depart'));
     }
 
-    public function update(Request $request){
+    public function update(Request $request, $id){
       if ($request->all() == ''){
         return view ('/home')->with ('No Update Made');
       } else{
-      $data = Employee::find($request->id);
+
+      $data = Employee::find($id);
+
+      // return $data;
 
       $data->first_name = $request->firstname;
       $data->last_name = $request->lastname;
@@ -110,12 +119,33 @@ class EmployeeController extends Controller
 
       // return $data;
 
-
-
-
-
       return view ('/home')->with ('Update Successful');
 
     }
-    }
+  }
+
+  public function count(){
+    $male = DB::table('employees')
+    ->where('employees.gender', '1')
+    ->count();
+
+    $female = DB::table('employees')
+    ->where('employees.gender', '2')
+    ->count();
+
+    $active = DB::table('employees')
+    ->where('employees.status', '1')
+    ->count();
+
+    $inactive = DB::table('employees')
+    ->where('employees.status', '2')
+    ->count();
+
+    $dept = DB::table('employees')
+    ->select('employees.dept_id')
+    ->groupby('employees.dept_id')
+    ->count('employees.dept_id');
+
+    dd($dept);
+  }
 }

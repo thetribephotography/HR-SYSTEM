@@ -71,9 +71,9 @@
         <div class="col">
           <label for="origin" class="form-label">State Of Origin</label>
           <select class="form-select" id="origin" name="origin">
-            {{-- <option value=" {{$ind->state_id}} " selected> {{$ind->state_name}} </option> --}}
-            <option value="" selected>Choose</option>
-            @foreach($ind as $state)
+            <option value=" {{$ind->state_id}} " selected> {{$ind->state_name}} </option>
+            {{-- <option value="" selected>Choose</option> --}}
+            @foreach($state as $state)
             <option value=" {{$state->id}} "> {{$state->state_name}} </option>
             @endforeach
           </select>
@@ -81,10 +81,10 @@
         <div class="mb-3 col">
           <label for="dept" class="form-label">Department</label>
           <select class="form-select" id="dept" name="dept">
-            {{-- <option value="{{$ind->dept_id}}" selected> {{$ind->dept_name}} </option> --}}
-            <option value="" selected> Choose</option>
-            @foreach ($ind as $dept)
-            <option value=" {{$dept->id}} ">{{$dept->dept_name}}</option>
+            <option value="{{$ind->dept_id}}" selected> {{$ind->dept_name}} </option>
+            {{-- <option value="" selected> Choose</option> --}}
+            @foreach ($depart as $depart)
+            <option value=" {{$depart->id}} ">{{$depart->dept_name}}</option>
             @endforeach
           </select>
         </div> 
