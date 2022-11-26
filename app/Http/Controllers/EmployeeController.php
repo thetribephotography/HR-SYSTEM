@@ -51,8 +51,6 @@ class EmployeeController extends Controller
 
     public function show(){
 
-        // $list = Employee::all();
-
         $list = DB::table('employees')
         ->join('departments', 'departments.id', '=', 'employees.dept_id')
         ->join('states', 'states.id', '=', 'employees.state_id')
@@ -67,10 +65,6 @@ class EmployeeController extends Controller
 
       // $ind = Employee::find($id);
 
-      // $value = 
-
-      // $fire = $request->id;
-
       $ind = DB::table('employees')
       ->join('departments', 'departments.id', '=', 'employees.dept_id')
       ->join('states', 'states.id', '=', 'employees.state_id')
@@ -81,8 +75,6 @@ class EmployeeController extends Controller
 
       $state = State:: all();
       $depart = Department::all();
-
-      // $ind = DB::table('employees')->find($id);
 
       // return $state;
 
@@ -114,8 +106,6 @@ class EmployeeController extends Controller
       // dd($data);
 
       $data->update();
-
-      // upload = Employee::where('id', $id)->update(all());
 
       // return $data;
 
