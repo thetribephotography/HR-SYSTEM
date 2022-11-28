@@ -72,7 +72,6 @@ class EmployeeController extends Controller
       ->where('employees.id', $id)
       ->first();
 
-
       $state = State:: all();
       $depart = Department::all();
 
