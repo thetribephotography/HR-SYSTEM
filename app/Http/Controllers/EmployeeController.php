@@ -40,11 +40,7 @@ class EmployeeController extends Controller
         $employee->state_id = $request->origin;
         $employee->dept_id = $request->dept;
         $employee->salary = $request->salary;
-        // $employee->status = $status;
-
         $employee->save();
-
-        // dd($employee);
 
         return redirect ('/home')->with('Employee Successfull');
     }
@@ -54,7 +50,8 @@ class EmployeeController extends Controller
         $list = DB::table('employees')
         ->join('departments', 'departments.id', '=', 'employees.dept_id')
         ->join('states', 'states.id', '=', 'employees.state_id')
-        ->select('departments.dept_name as dept_name', 'departments.id as dept_id', 'states.state_name as state_name', 'states.id as state_id', 'employees.*')
+        ->select('departments.dept_name as dept_name', 'departments.id as dept_id', 
+        'states.state_name as state_name', 'states.id as state_id', 'employees.*')
         ->get();
 
         // return $list;
@@ -68,7 +65,8 @@ class EmployeeController extends Controller
       $ind = DB::table('employees')
       ->join('departments', 'departments.id', '=', 'employees.dept_id')
       ->join('states', 'states.id', '=', 'employees.state_id')
-      ->select('departments.dept_name as dept_name', 'departments.id as dept_id', 'states.state_name as state_name', 'states.id as state_id', 'employees.*')
+      ->select('departments.dept_name as dept_name', 'departments.id as dept_id', 'states.state_name as state_name',
+      'states.id as state_id', 'employees.*')
       ->where('employees.id', $id)
       ->first();
 
@@ -89,8 +87,6 @@ class EmployeeController extends Controller
 
       $data = Employee::find($id);
 
-      // return $data;
-
       $data->first_name = $request->firstname;
       $data->last_name = $request->lastname;
       $data->gender = $request->gender;
@@ -105,8 +101,6 @@ class EmployeeController extends Controller
       // dd($data);
 
       $data->update();
-
-      // return $data;
 
       return view ('/home')->with ('Update Successful');
 
