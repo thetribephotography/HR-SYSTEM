@@ -30,16 +30,12 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 
 Route::prefix('')->middleware(['auth'])->group(function(){
-Route::get('user/employee_reg', [HomeController::class, 'employee'])->name('users.employee_reg');
-Route::post('employee/register', [EmployeeController::class, 'register'])->name('employees.register');
+// Route::get('user/employee_reg', [HomeController::class, 'employee'])->name('users.employee_reg');
+// Route::post('employee/register', [EmployeeController::class, 'register'])->name('employees.register');
 
-// Route::get('user/employee_list', [HomeController::class, 'list'])->name('users.employee_list');
-Route::any('employee/show', [EmployeeController::class, 'show'])->name('employees.show');
+// Route::any('employee/show', [EmployeeController::class, 'show'])->name('employees.show');
 
-Route::any('/employee/individual/{id}', [EmployeeController::class, 'individual'])->name('employees.individual');
-Route::any('/employee/update/{id}', [EmployeeController::class, 'update'])->name('employees.update');
-
-// Route::post('')
-
+// Route::any('/employee/individual/{id}', [EmployeeController::class, 'individual'])->name('employees.individual');
+// Route::any('/employee/update/{id}', [EmployeeController::class, 'update'])->name('employees.update');
 
 });
