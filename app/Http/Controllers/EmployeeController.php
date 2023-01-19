@@ -130,5 +130,7 @@ class EmployeeController extends Controller
     ->count('employees.dept_id');
 
     dd($dept);
+
+    // return view ('/', compact ('male', 'female', 'active', 'inactive', 'dept'));
   }
 }
