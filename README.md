@@ -1,4 +1,4 @@
-Human Management System Using Laravel and MySQL
+Human Management System Using Laravel-Breeze and MySQL. Stream lined on Payroll Information and Human Management. 
 
 
 
